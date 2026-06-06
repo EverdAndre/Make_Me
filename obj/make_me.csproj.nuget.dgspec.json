@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "E:\\make_me\\make_me.csproj": {}
+    "E:\\make_me\\Make_Me.csproj": {}
   },
   "projects": {
-    "E:\\make_me\\make_me.csproj": {
+    "E:\\make_me\\Make_Me.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\make_me\\make_me.csproj",
-        "projectName": "make_me",
-        "projectPath": "E:\\make_me\\make_me.csproj",
+        "projectUniqueName": "E:\\make_me\\Make_Me.csproj",
+        "projectName": "Make_Me",
+        "projectPath": "E:\\make_me\\Make_Me.csproj",
         "packagesPath": "C:\\Users\\Everd\\.nuget\\packages\\",
         "outputPath": "E:\\make_me\\obj\\",
         "projectStyle": "PackageReference",
@@ -43,6 +43,18 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
