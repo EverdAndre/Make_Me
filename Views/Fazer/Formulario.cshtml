@@ -1,0 +1,23 @@
+<h1>@ViewData["Title"]</h1>
+@model Make_Me.Models.Tarefa
+
+<form method="POST">
+  <input type="hidden" asp-for="Id">
+  <div class="d-flex justify-content-end mb-3">
+    <button class="btn btn-secondary" type="button" onclick="window.history.back();"asp-controller="Fazer" asp-action="Index">
+      <i class="bi bi-arrow-left"></i> Voltar
+    </button>
+  </div>
+  <div class="mb-3">
+    <label asp-for="Titulo">Titulo</label>
+      <input asp-for="Titulo" class="form-control">
+      <span asp-validation-for="Titulo" class="text-danger" ></span>
+    </div>
+     <div class="mb-3">
+    <label asp-for="DataFim">Data de Entrega</label>
+      <input asp-for="DataFim" class="form-control" type="date">
+    </div>
+
+    <button class="btn btn-primary" type="submit">Salvar</button>
+  </div>
+</form>

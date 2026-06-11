@@ -1,0 +1,11 @@
+@model Make_Me.Models.Tarefa
+
+<h1>@ViewData["Title"]</h1>
+
+<p>Deseja Excluir a Tarefa <strong>@Model.Titulo</strong>?</p>
+
+<form asp-action="Excluir" method="POST">
+    <input type="hidden" asp-for="Id"/>
+    <button class="btn btn-danger" type="submit">Excluir</button>
+    <a asp-controller="Fazer" asp-action="Index" class="btn btn-primary" >Cancelar</a>
+</form>

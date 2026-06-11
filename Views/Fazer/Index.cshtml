@@ -1,0 +1,47 @@
+@using Microsoft.EntityFrameworkCore.Metadata.Internal
+@model List<Make_Me.Models.Tarefa>
+
+<h1 >@ViewData["Title"]</h1>
+<a asp-controller="Fazer" asp-action="Create" class="btn btn-primary">Nova Tarefa</a>
+
+@if(Model.Count > 0)
+{
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Titulo</th>
+      <th scope="col">Criado Em</th>
+      <th scope="col">Concluido Em</th>
+      <th scope="col">Data Entrega</th>
+      <th scope="col">Opções</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach (var tarefa in Model)
+    {
+    <tr>
+      <td>@tarefa.Id</td>
+      <td>@tarefa.Titulo</td>
+      <td>@tarefa.CriadoEm</td>
+      <td>@(tarefa.DataConclusao.HasValue ? tarefa.DataConclusao.Value.ToString("dd/MM/yyyy HH:mm") : "Não Finalizada")</td>
+      <td>@(tarefa.DataFim.HasValue ? tarefa.DataFim : "Não Concluida")</td>
+      <td>
+        <a asp-controller="Fazer" asp-action="Concluir" asp-route-id="@tarefa.Id" class="btn btn-success btn-sm">
+        <i class="bi bi-check-lg"></i> Concluir
+        </a>
+        <a asp-controller="Fazer" asp-action="Editar" asp-route-id="@tarefa.Id" class="btn btn-warning btn-sm">
+        <i class="bi bi-pencil-square"></i> Editar
+        </a>
+        <a asp-controller="Fazer" asp-action="Excluir" asp-route-id="@tarefa.Id" class="btn btn-danger btn-sm">
+        <i class="bi bi-trash"></i> Excluir
+        </a>
+      </td>
+    </tr>
+    }
+  </tbody>
+</table>
+}else
+{
+    <p>Nenhuma Tarefa Cadastrada</p>
+}

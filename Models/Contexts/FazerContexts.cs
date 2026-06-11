@@ -5,7 +5,7 @@ namespace Make_Me.Contexts;
 
 public class FazerContext: DbContext
 {
-    public DbSet<Fazer> Tarefas => Set<Fazer>();
+    public DbSet<Tarefa> Tarefas => Set<Tarefa>();
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
