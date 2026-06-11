@@ -3,6 +3,7 @@ using System;
 using Make_Me.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Make_Me.Migrations
 {
     [DbContext(typeof(FazerContext))]
-    partial class FazerContextModelSnapshot : ModelSnapshot
+    [Migration("20260610021102_AtualizaTabelaTarefas")]
+    partial class AtualizaTabelaTarefas
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.0");
@@ -26,7 +29,7 @@ namespace Make_Me.Migrations
                     b.Property<DateTime>("CriadoEm")
                         .HasColumnType("TEXT");
 
-                    b.Property<DateOnly?>("DataConclusao")
+                    b.Property<DateOnly>("DataConclusao")
                         .HasColumnType("TEXT");
 
                     b.Property<DateOnly?>("DataFim")
